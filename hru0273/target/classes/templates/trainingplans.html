@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Plans</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:if="${session.loggedInUser != null}">
+        <p>Logged in as: <span th:text="${session.loggedInUser.name}"></span></p>
+    </div>
+
+    <h1 class="text-center">Training Plans</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Difficulty</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="trainingPlan : ${trainingplans}">
+            <td th:text="${trainingPlan.id}"></td>
+            <td th:text="${trainingPlan.name}"></td>
+            <td th:text="${trainingPlan.description}"></td>
+            <td th:text="${trainingPlan.difficulty}"></td>
+                <div th:if="${session.loggedInUser instanceof T(com.example.hru0273.Trainer)}">
+                    <td><a th:href="@{'/training-plans/update/' + ${trainingPlan.id}}" class="btn btn-primary">Update</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${session.loggedInUser instanceof T(com.example.hru0273.Trainer)}">
+        <a href="/training-plans/create" class="btn btn-primary">Create New Training Plan</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

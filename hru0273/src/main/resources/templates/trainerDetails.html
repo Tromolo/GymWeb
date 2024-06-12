@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Trainer Details</h1>
+    <h2 th:text="${trainer.name}"></h2>
+    <p><strong>Experience:</strong> <span th:text="${trainer.experience}"></span></p>
+    <p><strong>Specialization:</strong> <span th:text="${trainer.specialization}"></span></p>
+
+    <img th:src="${trainer.photoUrl != null ? trainer.photoUrl : 'https://via.placeholder.com/400x200'}" alt="Trainer's photo" />
+    <h3>Assigned Users:</h3>
+    <ul th:each="user : ${trainer.users}">
+        <li th:text="${user.name}"></li>
+    </ul>
+</div>
+</body>
+</html>

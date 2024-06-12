@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Center</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Our Fitness Center</h1>
+    <p class="lead">Get fit, stay healthy!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Gym">
+                <div class="card-body">
+                    <h5 class="card-title">Our Gym</h5>
+                    <p class="card-text">Welcome to Our Gym! We're dedicated to helping you achieve your fitness goals in a supportive environment. </p>
+                    <a href="#gym-info" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gymModal">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Trainers">
+                <div class="card-body">
+                    <h5 class="card-title">Our Trainers</h5>
+                    <p class="card-text">Get More information About our trainers</p>
+                    <a href="/login" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="gymModal" tabindex="-1" aria-labelledby="gymModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gymModalLabel">Our Gym</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>This is some random information about our gym.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
